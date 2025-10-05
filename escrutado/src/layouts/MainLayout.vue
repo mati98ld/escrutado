@@ -4,23 +4,20 @@
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title>
-          <q-avatar>
-            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg" />
-          </q-avatar>
-          Escrutado
+        <q-toolbar-title class="q-ml-sm">
+          <q-img
+            :ratio="21 / 9"
+            style="max-width: 150px"
+            fit="contain"
+            src="../assets/LogoEscrutadoHorizontal.png"
+          >
+          </q-img>
         </q-toolbar-title>
       </q-toolbar>
-
-      <q-tabs align="left">
-        <q-route-tab to="/page1" label="Page One" />
-        <q-route-tab to="/page2" label="Page Two" />
-        <q-route-tab to="/page3" label="Page Three" />
-      </q-tabs>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" side="left" overlay behavior="mobile" elevated>
-      <!-- drawer content -->
+      <AppMenu />
     </q-drawer>
 
     <q-page-container>
@@ -31,8 +28,12 @@
 
 <script>
 import { ref } from 'vue'
+import AppMenu from '../components/AppMenu.vue'
 
 export default {
+  components: {
+    AppMenu,
+  },
   setup() {
     const leftDrawerOpen = ref(false)
 

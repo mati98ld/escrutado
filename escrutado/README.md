@@ -1,4 +1,4 @@
-# Escrutado App (escrutado)
+# El Escrutado
 
 Esta app es para ayudar al presidente de mesa con el escrutinio
 

@@ -2,7 +2,7 @@
   "name": "escrutado",
   "version": "0.0.1",
   "description": "Esta app es para ayudar al presidente de mesa con el escrutinio",
-  "productName": "Escrutado App",
+  "productName": "El escrutado",
   "author": "Matías Díaz <mati98ld@gmail.com>",
   "type": "module",
   "private": true,

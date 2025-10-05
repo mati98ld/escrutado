@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <!-- Add your page content here -->
+  <div class="flex justify-center">
+    <h1>Aca va a ser el escrutinio</h1>
   </div>
 </template>
 
