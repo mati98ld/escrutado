@@ -1,13 +1,10 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    />
-  </q-page>
+  <div class="q-pa-lg column q-gutter-md items-center">
+    <CounterCard storageKey="contador_productos" />
+    <CounterCard storageKey="contador_votos" />
+  </div>
 </template>
 
 <script setup>
-//
+import CounterCard from '../components/CountedCard.vue'
 </script>
