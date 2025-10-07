@@ -1,13 +1,23 @@
 <template>
-  <q-card class="q-pa-md flex flex-center column items-center" style="width: 250px">
-    <div class="flex items-center justify-between full-width">
-      <q-btn round color="negative" icon="remove" @click="decrement" />
+  <q-card class="count-card q-pa-sm flex items-center justify-center h-full w-full">
+    <div class="row items-center justify-between full-width">
+      <q-btn
+        dense
+        round
+        color="negative"
+        icon="remove"
+        aria-label="Restar"
+        :disable="count <= 0"
+        @click="decrement"
+      />
 
-      <div class="text-h3 text-bold text-primary q-mx-md">
-        {{ count }}
+      <div class="count-value text-h5 text-bold text-primary q-mx-sm" aria-live="polite">
+        <transition name="count-fade" mode="out-in">
+          <span :key="count">{{ count }}</span>
+        </transition>
       </div>
 
-      <q-btn round color="positive" icon="add" @click="increment" />
+      <q-btn dense round color="positive" icon="add" aria-label="Sumar" @click="increment" />
     </div>
   </q-card>
 </template>
@@ -34,20 +44,53 @@ const count = ref(props.defaultValue)
 onMounted(() => {
   const saved = localStorage.getItem(props.storageKey)
   if (saved !== null) {
-    count.value = parseInt(saved)
+    const parsed = parseInt(saved, 10)
+    if (!Number.isNaN(parsed)) {
+      count.value = parsed
+    }
   }
 })
 
 // --- Watch for changes and save ---
 watch(count, (newVal) => {
-  localStorage.setItem(props.storageKey, newVal)
+  // store as string for consistency
+  localStorage.setItem(props.storageKey, String(newVal))
 })
 
 // --- Methods ---
-const increment = () => count.value++
+const increment = () => {
+  count.value++
+}
+
 const decrement = () => {
-  if (count.value > 0) count.value--
+  if (count.value > 0) {
+    count.value--
+  }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.count-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: linear-gradient(180deg, #ffffff, #fbfbff);
+}
+
+.count-value {
+  min-width: 48px;
+  text-align: center;
+  color: var(--q-primary);
+}
+
+.count-fade-enter-active,
+.count-fade-leave-active {
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+.count-fade-enter-from,
+.count-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+</style>
