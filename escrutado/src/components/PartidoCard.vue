@@ -1,16 +1,16 @@
 <template>
-  <q-card class="partido-card q-pa-md" style="width: 100%">
+  <q-card class="partido-card q-pa-md q-mb-xs" style="width: 100%">
     <div class="row items-center no-wrap">
       <!-- Imagen del partido ocupa toda la parte izquierda -->
-      <div class="col-auto q-mr-md" style="display: flex; align-items: center; width: 80px">
+      <div class="col-1 q-ml-sm" style="display: flex; align-items: center; width: 80px">
         <q-img :src="src" :alt="`Logo de ${nombre}`" style="width: 100%; height: 100%"> </q-img>
       </div>
 
       <!-- Información y contador a la derecha, centrados -->
       <div class="col">
         <div class="column items-center">
-          <div class="text-h6 text-weight-bold text-center">{{ nombre }}</div>
-          <div class="text-subtitle2 text-grey-7 q-mt-xs text-center">
+          <div class="text-h7 text-weight-bold text-center">{{ nombre }}</div>
+          <div class="text-subtitle1 text-grey-7 q-mt-xs text-center">
             Partido #{{ numeroPartido }}
           </div>
 

@@ -1,6 +1,9 @@
 <template>
-  <q-card class="count-card q-pa-sm flex items-center justify-center h-full w-full">
-    <div class="row items-center justify-between full-width">
+  <q-card
+    class="count-card q-pa-sm flex items-center justify-center"
+    style="width: 100%; height: 100%"
+  >
+    <div class="row items-center justify-between full-width" style="width: 100%">
       <q-btn
         dense
         round
@@ -74,12 +77,18 @@ const decrement = () => {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   background: linear-gradient(180deg, #ffffff, #fbfbff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .count-value {
-  min-width: 48px;
+  min-width: 40px;
   text-align: center;
   color: var(--q-primary);
+  flex: 1 1 auto;
 }
 
 .count-fade-enter-active,

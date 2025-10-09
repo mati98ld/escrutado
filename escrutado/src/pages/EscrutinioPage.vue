@@ -1,12 +1,23 @@
 <template>
-  <q-page class="q-pa-md flex items-center justify-center">
-    <div class="column items-center" style="width: 100%; max-width: 640px">
-      <div class="text-h5 q-mb-lg q-pa-md">Escrutinio de Partidos</div>
+  <q-page class="q-pa-md q-mb-xl">
+    <div class="column items-center q-mb-xl" style="width: 100%">
+      <div
+        class="text-h4 text-primary text-center q-mb-xl q-pa-md q-mt-lg"
+        style="
+          font-weight: bold;
+          letter-spacing: 1px;
+          border-radius: 12px;
+          background: linear-gradient(90deg, #e3f2fd 0%, #bbdefb 100%);
+          box-shadow: 0 2px 8px rgba(33, 150, 243, 0.08);
+        "
+      >
+        Escrutinio de votos
+      </div>
 
-      <div class="column q-gutter-md items-stretch" style="width: 100%">
-        <div v-for="partido in partidos" :key="partido.id" class="full-width">
+      <div class="column" style="width: 100%">
+        <div v-for="partido in partidos" :key="partido.numero" class="full-width q-mb-md">
           <PartidoCard
-            :imagen="partido.imagen"
+            :imagen="partido.imagen || LogoEscrutado"
             :nombre="partido.nombre"
             :numero-partido="partido.numero"
             :default-count="partido.votosIniciales || 0"
@@ -20,32 +31,9 @@
 <script setup>
 import { ref } from 'vue'
 import PartidoCard from '../components/PartidoCard.vue'
-
-// Importa imágenes desde assets (ruta relativa) para que el bundler las resuelva
+import partidosData from '../data/partidos.js'
 import LogoEscrutado from '../assets/LogoEscrutado.png'
 
-// Datos de ejemplo de los partidos
-const partidos = ref([
-  {
-    id: 1,
-    nombre: 'Partido Democrático',
-    numero: 101,
-    imagen: LogoEscrutado,
-    votosIniciales: 0,
-  },
-  {
-    id: 2,
-    nombre: 'Unión Liberal',
-    numero: 102,
-    imagen: LogoEscrutado,
-    votosIniciales: 0,
-  },
-  {
-    id: 3,
-    nombre: 'Frente Popular',
-    numero: 103,
-    imagen: LogoEscrutado,
-    votosIniciales: 0,
-  },
-])
+// `partidosData` may export an object like { partidos: [...] }
+const partidos = ref(partidosData.partidos ?? partidosData)
 </script>
