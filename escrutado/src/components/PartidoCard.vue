@@ -10,7 +10,7 @@
       <div class="col">
         <div class="column items-center">
           <div class="text-h7 text-weight-bold text-center">{{ nombre }}</div>
-          <div class="text-subtitle1 text-grey-7 q-mt-xs text-center">
+          <div v-if="numeroPartido" class="text-subtitle1 text-grey-7 q-mt-xs text-center">
             Partido #{{ numeroPartido }}
           </div>
 
@@ -39,7 +39,7 @@ const props = defineProps({
   },
   numeroPartido: {
     type: [String, Number],
-    required: true,
+    required: false,
   },
   defaultCount: {
     type: Number,

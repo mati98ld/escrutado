@@ -91,6 +91,10 @@ const partidos = [
     imagen: Logos[276],
     votosIniciales: 0,
   },
+  {
+    nombre: 'VOTO EN BLANCO',
+    votosIniciales: 0,
+  },
 ]
 
 export default { partidos }
