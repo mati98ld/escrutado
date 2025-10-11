@@ -2,7 +2,7 @@
   <q-page class="q-pa-md q-mb-xl">
     <div class="column items-center q-mb-xl" style="width: 100%">
       <div
-        class="text-h4 text-primary text-center q-mb-xl q-pa-md q-mt-lg"
+        class="text-h5 text-primary text-center q-mb-xl q-pa-md q-mt-lg"
         style="
           font-weight: bold;
           letter-spacing: 1px;

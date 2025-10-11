@@ -28,6 +28,9 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue'
 
+// emit event when count changes
+const emit = defineEmits(['change'])
+
 // --- Props ---
 const props = defineProps({
   storageKey: {
@@ -58,6 +61,8 @@ onMounted(() => {
 watch(count, (newVal) => {
   // store as string for consistency
   localStorage.setItem(props.storageKey, String(newVal))
+  // emit change event with storageKey and new value
+  emit('change', { storageKey: props.storageKey, count: newVal })
 })
 
 // --- Methods ---

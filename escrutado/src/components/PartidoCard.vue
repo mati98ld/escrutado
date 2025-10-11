@@ -15,7 +15,11 @@
           </div>
 
           <div class="q-mt-md row items-center justify-center">
-            <CountedCard :storage-key="storageKey" :default-value="defaultCount" />
+            <CountedCard
+              :storage-key="storageKey"
+              :default-value="defaultCount"
+              @change="onCountChange"
+            />
           </div>
         </div>
       </div>
