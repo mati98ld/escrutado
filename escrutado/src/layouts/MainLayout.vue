@@ -18,10 +18,19 @@
 
     <q-drawer v-model="leftDrawerOpen" side="left" overlay behavior="mobile" elevated>
       <AppMenu />
+      <div class="text-caption text-grey-6 flex justify-center q-mt-xl">
+        Desarrollado por Matías Díaz
+      </div>
     </q-drawer>
 
     <q-page-container>
       <router-view />
+      <div
+        class="text-caption text-grey-6 flex justify-center"
+        style="transform: translateY(-50px)"
+      >
+        Desarrollado por Matías Díaz
+      </div>
     </q-page-container>
   </q-layout>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pa-md q-mb-xl">
+  <q-page>
     <div class="column items-center q-mb-xl" style="width: 100%">
       <div class="text-h5 text-primary text-center q-mb-lg q-pa-md q-mt-lg" :style="titleStyle">
         Resultados
@@ -8,7 +8,7 @@
       <div class="text-h6">Total de votos: {{ totalVotes }}</div>
       <div class="text-h6">Votos escrutados: {{ votosEscrutados }}</div>
 
-      <q-card class="q-pa-md full-width q-mt-md">
+      <q-card class="q-pa-md full-width q-mt-md q-mb-md">
         <div v-if="sortedRows.length">
           <div
             v-for="row in sortedRows"
