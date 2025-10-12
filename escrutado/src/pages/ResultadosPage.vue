@@ -5,7 +5,7 @@
         Resultados
       </div>
 
-      <div class="text-h6">Total de votos: {{ totalVotes }}</div>
+      <div class="text-h6">Votos emitidos: {{ totalVotes }}</div>
       <div class="text-h6">Votos escrutados: {{ votosEscrutados }}</div>
 
       <q-card class="q-pa-md full-width q-mt-md q-mb-md">

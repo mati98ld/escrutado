@@ -1,7 +1,7 @@
 <template>
   <q-layout view="hHh LpR fFf">
-    <q-header reveal elevated class="bg-primary text-white" height-hint="98">
-      <q-toolbar>
+    <q-header reveal elevated class="bg-primary text-white q-pt-xl" height-hint="98">
+      <q-toolbar class="q-pt-safe">
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
         <q-toolbar-title class="q-ml-sm">
@@ -16,14 +16,21 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" side="left" overlay behavior="mobile" elevated>
+    <q-drawer
+      v-model="leftDrawerOpen"
+      side="left"
+      overlay
+      class="q-pt-xl"
+      behavior="mobile"
+      elevated
+    >
       <AppMenu />
-      <div class="text-caption text-grey-6 flex justify-center q-mt-xl">
+      <div class="text-caption text-grey-6 flex justify-center q-mt-lg">
         Desarrollado por Matías Díaz
       </div>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="q-pb-safe">
       <router-view />
       <div
         class="text-caption text-grey-6 flex justify-center"
