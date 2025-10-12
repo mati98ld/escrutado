@@ -95,6 +95,14 @@ const partidos = [
     nombre: 'VOTO EN BLANCO',
     votosIniciales: 0,
   },
+  {
+    nombre: 'VOTO NULO',
+    votosIniciales: 0,
+  },
+  {
+    nombre: 'VOTO RECURRIDO',
+    votosIniciales: 0,
+  },
 ]
 
 export default { partidos }
