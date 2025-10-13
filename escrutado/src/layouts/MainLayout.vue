@@ -1,6 +1,6 @@
 <template>
   <q-layout view="hHh LpR fFf">
-    <q-header reveal elevated class="bg-primary text-white q-pt-xl" height-hint="98">
+    <q-header reveal elevated class="bg-primary text-white q-pt-lg" height-hint="98">
       <q-toolbar class="q-pt-safe">
         <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
@@ -26,17 +26,29 @@
     >
       <AppMenu />
       <div class="text-caption text-grey-6 flex justify-center q-mt-lg">
-        Desarrollado por Matías Díaz
+        <div class="flex-column">
+          <span>Desarrollado por Matías Díaz</span>
+          <div class="row items-center justify-center">
+            <FontAwesomeIcon :icon="faInstagram" class="q-ml-sm" />
+            <span>mati.diiaz</span>
+          </div>
+        </div>
       </div>
     </q-drawer>
 
     <q-page-container class="q-pb-safe">
       <router-view />
       <div
-        class="text-caption text-grey-6 flex justify-center"
+        class="text-caption text-grey-6 flex items-center justify-center"
         style="transform: translateY(-50px)"
       >
-        Desarrollado por Matías Díaz
+        <div class="flex-column">
+          <span>Desarrollado por Matías Díaz</span>
+          <div class="row items-center justify-center">
+            <FontAwesomeIcon :icon="faInstagram" class="q-ml-sm" />
+            <span>mati.diiaz</span>
+          </div>
+        </div>
       </div>
     </q-page-container>
   </q-layout>
@@ -45,10 +57,14 @@
 <script>
 import { ref } from 'vue'
 import AppMenu from '../components/AppMenu.vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// import the specific icon definition directly
+import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 export default {
   components: {
     AppMenu,
+    FontAwesomeIcon,
   },
   setup() {
     const leftDrawerOpen = ref(false)
@@ -58,6 +74,8 @@ export default {
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value
       },
+      // expose the imported icon to the template
+      faInstagram,
     }
   },
 }
