@@ -6,6 +6,7 @@ const routes = [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: 'EscrutinioPage', component: () => import('src/pages/EscrutinioPage.vue') },
       { path: 'ResultadosPage', component: () => import('src/pages/ResultadosPage.vue') },
+      { path: 'DescargarPage', component: () => import('src/pages/DescargarPage.vue') },
     ],
   },
 

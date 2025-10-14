@@ -43,6 +43,17 @@
         del padrón de tu mesa.
       </div>
     </div>
+
+    <div class="q-mt-xl text-center flex column items-center">
+      <q-btn
+        class="q-ml-sm"
+        flat
+        color="secondary"
+        icon="file_download"
+        label="Descargá la app para usar 'El Escrutado' sin conexión a internet"
+        to="/DescargarPage"
+      />
+    </div>
   </q-page>
 </template>
 

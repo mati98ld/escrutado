@@ -51,6 +51,21 @@
       </q-item>
 
       <q-separator spaced />
+
+      <q-item
+        clickable
+        v-ripple
+        :active="link === 'descargar'"
+        @click="link = 'descargar'"
+        active-class="my-menu-link"
+        to="DescargarPage"
+      >
+        <q-item-section avatar>
+          <q-icon name="file_download" />
+        </q-item-section>
+
+        <q-item-section>Descargar app</q-item-section>
+      </q-item>
     </q-list>
   </div>
 </template>
